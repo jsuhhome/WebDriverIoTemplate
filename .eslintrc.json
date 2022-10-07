@@ -1,0 +1,67 @@
+{
+  "root": true,
+  "extends": [
+    "eslint:recommended"
+  ],
+  "parserOptions": {
+    "sourceType": "module"
+  },
+  "env": {
+    "es2022": true,
+    "node": true
+  },
+  "rules": {
+    "arrow-parens": [
+      "error",
+      "always"
+    ],
+    "array-callback-return": "off",
+    "class-methods-use-this": "off",
+    "vars-on-top": "off",
+    "comma-dangle": "off",
+    "camelcase": "off",
+    "ignoreComments": "off",
+    "prop-types": "off",
+    "object-curly-newline": "off",
+    "import/extensions": "off",
+    "import/no-mutable-exports": "off",
+    "import/prefer-default-export": "off",
+    "strict": [
+      "error",
+      "global"
+    ],
+    "curly": "warn",
+    "func-names": "off",
+    "global-require": "off",
+    "radix": 0,
+    "guard-for-in": "off",
+    "consistent-return": "off",
+    "no-return-assign": "off",
+    "no-console": "off",
+    "no-throw-literal": "off",
+    "no-restricted-syntax": "off",
+    "no-shadow": "off",
+    "no-use-before-define": "off",
+    "no-underscore-dangle": "off",
+    "no-param-reassign": "off",
+    "no-restricted-globals": "off",
+    "no-continue": "off",
+    "no-useless-escape": "off",
+    "no-restricted-properties": "off",
+    "no-loop-func": "off",
+    "no-sequences": "off",
+    "no-prototype-builtins": "off",
+    "no-redeclare": "off",
+    "no-control-regex": "off",
+    "no-nested-ternary": "off",
+    "prefer-rest-params": "off",
+    "prefer-promise-reject-errors": "off",
+    "prefer-destructuring": "off",
+    "prefer-const": "off",
+    "prefer-spread": "off",
+    "import/no-extraneous-dependencies": "off",
+    "import/no-dynamic-require": "off",
+    "semi": 1,
+    "jest/valid-expect-in-promise": "off"
+  }
+}

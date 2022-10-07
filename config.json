@@ -1,0 +1,29 @@
+{
+    "commentENV" : "LOCAL_DOCKER (running tests in selenium grid hitting the local browser outside the containers), LOCAL (run tests locally against local browsers), DEV (run against dev) ",
+    "ENV" : "PROD",
+    "commentTestCapabilities" : "-------------------below is the test capabilities file to load-----------------",
+    "testCapabilities" : "chrome-desktop-tests.json",
+    "commentCMS" : "---------------below is sample user login and password-------------------------",
+    "user1": "username_goes_here",
+    "password1": "fake_password_goes_here",
+    "referenceData": "---------------------below this is sample reference data-------------------------",
+    "URLS" : {
+        "LOCAL": {
+            "APP_URL": "http://localhost:3000"
+        },
+        "LOCAL_DOCKER": {
+            "APP_URL": "http://host.docker.internal:3000"
+        },
+        "DEV": {
+            "APP_URL": "https://www.dev.google-dev.com"
+        },
+        "QA1": {
+            "APP_URL": "https://www.qa1.gmail.com"
+        },
+        "PROD": {
+            "APP_URL": "https://www.gmail.com"
+        }
+    }
+}
+
+

@@ -1,0 +1,103 @@
+# To execute this docker-compose yml file use `docker-compose -f selenium-grid-3-chrome.yml up`
+# Add the `-d` flag at the end for detached execution
+# To stop the execution, hit Ctrl+C, and then `docker-compose -f selenium-grid-3-chrome.yml down`
+version: "3"
+services:
+  chrome_1:
+    image: selenium/node-chrome:4.2.1-20220531
+    shm_size: 2gb
+    depends_on:
+      - selenium-hub
+    environment:
+      - SE_EVENT_BUS_HOST=selenium-hub
+      - SE_EVENT_BUS_PUBLISH_PORT=4442
+      - SE_EVENT_BUS_SUBSCRIBE_PORT=4443
+      - VNC_NO_PASSWORD=1
+      - SE_NODE_GRID_URL=http://localhost:4444
+
+  chrome_2:
+    image: selenium/node-chrome:4.2.1-20220531
+    shm_size: 2gb
+    depends_on:
+      - selenium-hub
+    environment:
+      - SE_EVENT_BUS_HOST=selenium-hub
+      - SE_EVENT_BUS_PUBLISH_PORT=4442
+      - SE_EVENT_BUS_SUBSCRIBE_PORT=4443
+      - VNC_NO_PASSWORD=1
+      - SE_NODE_GRID_URL=http://localhost:4444
+
+  chrome_3:
+    image: selenium/node-chrome:4.2.1-20220531
+    shm_size: 2gb
+    depends_on:
+      - selenium-hub
+    environment:
+      - SE_EVENT_BUS_HOST=selenium-hub
+      - SE_EVENT_BUS_PUBLISH_PORT=4442
+      - SE_EVENT_BUS_SUBSCRIBE_PORT=4443
+      - VNC_NO_PASSWORD=1
+      - SE_NODE_GRID_URL=http://localhost:4444
+
+#  edge_1:
+#    image: selenium/node-edge:4.1.3-20220405
+#    shm_size: 2gb
+#    depends_on:
+#      - selenium-hub
+#    environment:
+#      - SE_EVENT_BUS_HOST=selenium-hub
+#      - SE_EVENT_BUS_PUBLISH_PORT=4442
+#      - SE_EVENT_BUS_SUBSCRIBE_PORT=4443
+#      - VNC_NO_PASSWORD=1
+
+#  firefox_1:
+#    image: selenium/node-firefox:4.1.3-20220405
+#    shm_size: 2gb
+#    depends_on:
+#      - selenium-hub
+#    environment:
+#      - SE_EVENT_BUS_HOST=selenium-hub
+#      - SE_EVENT_BUS_PUBLISH_PORT=4442
+#      - SE_EVENT_BUS_SUBSCRIBE_PORT=4443
+#      - VNC_NO_PASSWORD=1
+
+#  chrome_video:
+#    image: selenium/video:ffmpeg-4.3.1-20220217
+#    volumes:
+#      - ./tmp/videos:/videos
+#    depends_on:
+#      - chrome
+#    environment:
+#      - DISPLAY_CONTAINER_NAME=chrome
+#      - FILE_NAME=chrome_video.mp4
+#      - VNC_NO_PASSWORD=1
+
+#  edge_video:
+#    image: selenium/video:ffmpeg-4.3.1-20220217
+#    volumes:
+#      - ./tmp/videos:/videos
+#    depends_on:
+#      - edge
+#    environment:
+#      - DISPLAY_CONTAINER_NAME=edge
+#      - FILE_NAME=edge_video.mp4
+#      - VNC_NO_PASSWORD=1
+
+#  firefox_video:
+#    image: selenium/video:ffmpeg-4.3.1-20220217
+#    volumes:
+#      - ./tmp/videos:/videos
+#    depends_on:
+#      - firefox
+#    environment:
+#      - DISPLAY_CONTAINER_NAME=firefox
+#      - FILE_NAME=firefox_video.mp4
+#      - VNC_NO_PASSWORD=1
+
+  selenium-hub:
+    image: selenium/hub:4.2.1
+    container_name: selenium-hub
+    ports:
+      - "4442:4442"
+      - "4443:4443"
+      - "4444:4444"

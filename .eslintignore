@@ -1,0 +1,9 @@
+/.idea/
+/node_modules/
+/app-driver/.DS_Store
+/test/.DS_Store
+/.DS_Store
+/logs/
+/.vscode/
+/tmp/
+/allure-results/

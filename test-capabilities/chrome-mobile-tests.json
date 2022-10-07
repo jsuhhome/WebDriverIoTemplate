@@ -1,0 +1,17 @@
+[
+  {
+    "maxInstances": 8,
+    "browserName": "chrome",
+    "acceptInsecureCerts": true,
+    "goog:chromeOptions": {
+      "mobileEmulation": {
+        "deviceName": "Nexus 5"
+      }
+    },
+    "specs": [
+      "./tests/specs/gmail-tests.js"
+    ]
+  }
+]
+
+

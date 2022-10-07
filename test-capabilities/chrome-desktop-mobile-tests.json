@@ -1,0 +1,30 @@
+[
+  {
+    "maxInstances": 1,
+    "browserName": "chrome",
+    "acceptInsecureCerts": true,
+    "goog:chromeOptions": {
+      "args": [
+        "--start-maximized"
+      ]
+    },
+    "specs": [
+      "./tests/specs/gmail-tests.js"
+    ]
+  },
+  {
+    "maxInstances": 1,
+    "browserName": "chrome",
+    "acceptInsecureCerts": true,
+    "goog:chromeOptions": {
+      "mobileEmulation": {
+        "deviceName": "Nexus 5"
+      }
+    },
+    "specs": [
+      "./tests/specs/gmail-tests.js"
+    ]
+  }
+]
+
+
