@@ -2,12 +2,12 @@
 
 
 ## Features
-* A config.json file that holds all settings/configuration for that specific test run. You would want Jenkins to edit this file before execution.
+* A config.json file that holds all settings/configuration for that specific test run. Also, a place to store configuration reference data (urls to qa, dev, uat, etc...).  You would want Jenkins to edit this file before execution.
 * A test-capabilities folder that holds all the various browser capabilities to inject into the wdio.conf.js file. This is also where you can specify test spec files to run.
 * A devtools helper class that can capture api calls using cdp protocol.
 * An example way to organize your page objects.
-* A logger system that keeps logs separate on a per worker thread.
-* uses nconf to allow test runs to override env variable via the command line
+* A logger system that keeps logs separate on a per worker thread instance.
+* uses nconf to allow test runs to override env variables via the command line
 
 ## Install & Setup
 
