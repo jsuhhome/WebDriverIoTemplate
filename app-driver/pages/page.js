@@ -314,10 +314,6 @@ class Page {
       }
    }
 
-   async startApiCapture() {
-      await browser.setupInterceptor();
-   }
-
    async getCmsApiFormPayload(index) {
       let allRequests = await browser.getRequest();
       let cmsApiRequests = allRequests.find((element) => element.url.includes('cms-api'));

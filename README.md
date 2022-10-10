@@ -1,8 +1,15 @@
 # Sample Webdriverio template
 
 
-## Install & Setup
+## Features
+* A config.json file that holds all settings/configuration for that specific test run. You would want Jenkins to edit this file before execution.
+* A test-capabilities folder that holds all the various browser capabilities to inject into the wdio.conf.js file. This is also where you can specify test spec files to run.
+* A devtools helper class that can capture api calls using cdp protocol.
+* An example way to organize your page objects.
+* A logger system that keeps logs separate on a per worker thread.
+* uses nconf to allow test runs to override env variable via the command line
 
+## Install & Setup
 
 ### General instructions
 
@@ -16,8 +23,8 @@
 
 This is where to store config data
 
-1. You can store usernames/passwords. Passwords should instead maybe retrieved in some vault.
-2. Any of these config fields can overridden in the command line --user1 USER1 --password1 PASSWORD1. This will take precedence over the values stored in config.json.
+1. You can store usernames/passwords. Ideally, passwords should instead be retrieved via some vault.
+2. Any of these config fields can be overridden in the command line --user1 USER1 --password1 PASSWORD1. This will take precedence over the values stored in config.json.
 3. Configure the "ENV" to LOCAL/LOCAL_DOCKER/DEV/QA1/PROD.
 
 ### Webstorm
@@ -33,7 +40,7 @@ Add a debug configuration
 
 ### Visual Studio Code
 1. Some tips are at `https://webdriver.io/docs/debugging/#debugging-with-visual-studio-code-vscode`
-2. Debug by hover over the npm script name and in the popup, you should see 'run script' and 'debug script'.
+2. Debug by hover over the npm script (in package.json) name and in the popup, you should see 'run script' and 'debug script'. Click 'Debug Script'
 
 ### Writing a test (General outline)
 1. Create a spec file under ./tests/specs
